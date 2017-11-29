@@ -14,7 +14,6 @@ public class RestaurantsItems {
     @NotBlank
     private String descricao;
 
-    @NotBlank
     private double valor;
 
     @ManyToOne
