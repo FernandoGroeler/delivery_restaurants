@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin("*")
 public class RestaurantsController {
     @Autowired
     RestaurantsRepository restaurantsRepository;
