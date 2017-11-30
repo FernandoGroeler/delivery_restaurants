@@ -12,9 +12,12 @@ public class RestaurantsItems {
     private int id;
 
     @NotBlank
-    private String descricao;
+    private String name;
 
-    private double valor;
+    @NotBlank
+    private String description;
+
+    private double price;
 
     @ManyToOne
     @JoinColumn(name = "idrestaurants")
@@ -28,20 +31,28 @@ public class RestaurantsItems {
         this.id = id;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getName() {
+        return name;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getValor() {
-        return valor;
+    public String getDescription() {
+        return description;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public Restaurants getRestaurants() {
