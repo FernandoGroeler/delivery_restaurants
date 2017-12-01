@@ -1,5 +1,6 @@
 package delivery.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class RestaurantsItems {
 
     private double price;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idrestaurants")
     private Restaurants restaurants;
