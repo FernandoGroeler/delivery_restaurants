@@ -32,6 +32,11 @@ public class RestaurantsItemsController {
         return ResponseEntity.ok().body(restaurantsItems);
     }
 
+    @RequestMapping(value = "/restaurants/items/restaurant/{id}", method = RequestMethod.GET, produces = "application/json")
+    public List<RestaurantsItems> getAllRestaurantsItemsByRestaurant(@PathVariable(value = "id") Integer restaurantsId) {
+        return restaurantsItemsRepository.findByIdRestaurants(restaurantsId);
+    }
+
     @RequestMapping(value = "/restaurants/items", method = RequestMethod.POST, produces = "application/json")
     public RestaurantsItems createRestaurantsItems(@Valid @RequestBody RestaurantsItems restaurantsItems) {
         return restaurantsItemsRepository.save(restaurantsItems);
