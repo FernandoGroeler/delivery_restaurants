@@ -1,7 +1,6 @@
 package delivery.repository;
 
 import delivery.model.OrdersItems;
-import delivery.model.RestaurantsItems;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

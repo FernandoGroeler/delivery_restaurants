@@ -11,7 +11,7 @@ spring:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/delivery
     username: postgres
-    password: postgres
+    password: pr4gr1m1d4r
     driverClassName: org.postgresql.Driver
 
 # Discovery Server Access

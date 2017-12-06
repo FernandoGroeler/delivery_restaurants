@@ -1,29 +1,24 @@
 package delivery.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
+
 @Entity
 @Table(name = "ordersitems")
 public class OrdersItems {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    @NotBlank
     private int quantity;
 
-    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "iditems")
-    private RestaurantsItems item;
+    @JoinColumn(name = "idrestaurantsitems")
+    private RestaurantsItems restaurantsItems;
 
-    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "idorder")
-    private Orders order;
+    @JoinColumn(name = "idorders")
+    private Orders orders;
 
     public int getId() {
         return id;
@@ -41,19 +36,19 @@ public class OrdersItems {
         this.quantity = quantity;
     }
 
-    public RestaurantsItems getItem() {
-        return item;
+    public RestaurantsItems getRestaurantsItems() {
+        return restaurantsItems;
     }
 
-    public void setItem(RestaurantsItems item) {
-        this.item = item;
+    public void setRestaurantsItems(RestaurantsItems restaurantsItems) {
+        this.restaurantsItems = restaurantsItems;
     }
 
-    public Orders getOrder() {
-        return order;
+    public Orders getOrders() {
+        return orders;
     }
 
-    public void setOrder(Orders order) {
-        this.order = order;
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 }

@@ -1,24 +1,20 @@
 package delivery.model;
 
 import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "orders")
 public class Orders {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    private int number;
-
-    @NotBlank
-    private String complement;
-
     @NotBlank
     private String address;
+
+    private String complement;
+    private int number;
 
     @NotBlank
     private String payment_option;
@@ -31,12 +27,12 @@ public class Orders {
         this.id = id;
     }
 
-    public int getNumber() {
-        return number;
+    public String getAddress() {
+        return address;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getComplement() {
@@ -47,12 +43,12 @@ public class Orders {
         this.complement = complement;
     }
 
-    public String getAddress() {
-        return address;
+    public int getNumber() {
+        return number;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getPayment_option() {
